@@ -20,15 +20,19 @@ import javafx.scene.control.ComboBox;
  *
  * @author rarui
  */
-public class RecipeManagementFXApp extends javafx.application.Application{
+public class AddRecipeTestView extends javafx.application.Application{
 
-    /**
-     * @param args the command line arguments
+    /** Inicializa la vista FX
+     * @param args parametros de comando
      */
     public static void main(String[] args) {
         launch(args);
     }
 
+    
+    /** Ejecuta la vista de usuario
+     * @param primaryStage es el escenario donde se montara todo
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         
@@ -62,6 +66,9 @@ public class RecipeManagementFXApp extends javafx.application.Application{
             System.out.println("Description: " + description);
             System.out.println("Preparation Time: " + prepTime);
             System.out.println("Difficulty: " + difficulty);
+            
+            //Guardar en una clase Recipe
+            
         });
 
         // Organizar la interfaz en un VBox
