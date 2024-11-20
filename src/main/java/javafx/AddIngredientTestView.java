@@ -34,11 +34,6 @@ public class AddIngredientTestView extends Application {
 
         Label quantityLabel = new Label("Quantity:");
         TextField quantityField = new TextField();
-
-        /*
-        Label unitLabel = new Label("Unit of Measure:");
-        TextField unitField = new TextField();
-        */
         
         Label unitLabel = new Label("Measure unit:");
         ComboBox<String> unitComboBox = new ComboBox<>();
