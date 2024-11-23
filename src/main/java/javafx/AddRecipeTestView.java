@@ -57,7 +57,7 @@ public class AddRecipeTestView extends javafx.application.Application{
             // Aquí se podrían capturar los valores de los campos y guardarlos
             String name = nameField.getText();
             String description = descriptionField.getText();
-            String prepTime = prepTimeField.getText();
+            Integer prepTime = Integer.getInteger(prepTimeField.getText());
             Integer difficulty = this.convertDifficulty(difficultyComboBox.getValue());
 
             // Mostrar los datos (esto sería el paso para guardar en base de datos)

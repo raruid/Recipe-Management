@@ -9,7 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -20,22 +24,30 @@ public class AddCategoryTestView extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
+        // Layout principal
+        VBox layout = new VBox(10);
+        layout.setPadding(new javafx.geometry.Insets(10));
+
+        // Campos de texto
+        Label nameLabel = new Label("Category Name:");
+        TextField nameField = new TextField();
+
+        // Botón de guardar
+        Button saveButton = new Button("Save");
+        saveButton.setOnAction(e -> {
+            // Lógica para guardar el category
+            String name = nameField.getText();
+
+            // Mostrar lo que se ha guardado en la consola
+            System.out.println("Saved category: " + name);
         });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
+
+        // Añadir los elementos al layout
+        layout.getChildren().addAll(nameLabel, nameField, saveButton);
+
+        // Crear la escena
+        Scene scene = new Scene(layout, 300, 250);
+        primaryStage.setTitle("Add Category");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

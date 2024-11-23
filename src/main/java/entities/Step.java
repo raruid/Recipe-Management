@@ -20,6 +20,9 @@ public class Step {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
+    
     @Column(name = "description", nullable = false)
     private String description;
     
@@ -35,9 +38,17 @@ public class Step {
     //Default constructor
     public Step() {
     }
+    
+    //Simple Constructor
+    public Step(String name, String description, int stepNumber) {
+        this.name = name;
+        this.description = description;
+        this.stepNumber = stepNumber;
+    }
 
     //Constructor
-    public Step(String description, int stepNumber, Recipe recipe) {
+    public Step(String name, String description, int stepNumber, Recipe recipe) {
+        this.name = name;
         this.description = description;
         this.stepNumber = stepNumber;
         this.recipe = recipe;
@@ -47,6 +58,10 @@ public class Step {
 
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
@@ -69,6 +84,10 @@ public class Step {
         this.id = id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -85,8 +104,10 @@ public class Step {
 
     @Override
     public String toString() {
-        return "Step{" + "id=" + id + ", description=" + description + ", stepNumber=" + stepNumber + ", recipe=" + recipe.getName() + '}';
+        return "Step{" + "id=" + id + ", name=" + name + ", description=" + description + ", stepNumber=" + stepNumber + ", recipe=" + recipe.getName() + '}';
+        //return "Step{" + "name=" + name + ", description=" + description + ", stepNumber=" + stepNumber + '}';
     }
+
 
 
 }

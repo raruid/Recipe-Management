@@ -24,7 +24,7 @@ public class AddIngredientTestView extends Application {
     
     @Override
     public void start(Stage primaryStage) {
- // Layout principal
+        // Layout principal
         VBox layout = new VBox(10);
         layout.setPadding(new javafx.geometry.Insets(10));
 
