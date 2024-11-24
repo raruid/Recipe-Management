@@ -5,6 +5,8 @@
 package repository;
 
 import entities.Ingredient;
+import entities.Recipe;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -12,5 +14,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author rarui
  */
 public interface IngredientRepository extends JpaRepository<Ingredient, Long>{
+    
+    List<Ingredient> findByRecipe(Recipe recipe);
     
 }
