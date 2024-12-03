@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER">
+    <TextField fx:id="recipeNameField" promptText="Recipe Name" />
+    <TextArea fx:id="recipeDescriptionField" promptText="Description" />
+    <ComboBox fx:id="categoryComboBox" />
+    <ComboBox fx:id="difficultyComboBox" />
+    <Button fx:id="saveRecipeButton" text="Save Recipe" />
+</VBox>
